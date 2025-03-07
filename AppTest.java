@@ -11,7 +11,6 @@ public class AppTest {
     
     @Test
     public void testSumar() throws RemoteException, Exception {
-        Cliente cliente = new Cliente();
         Registry registry = LocateRegistry.getRegistry("localhost", 1100);
         Interfaz interfaz = (Interfaz) registry.lookup("Calculadora"); //Buscar en el registro...
         assertEquals(5, interfaz.sumar(2, 3), 0);
