@@ -13,7 +13,7 @@ public class Cliente {
         Scanner sc = new Scanner(System.in);
         int eleccion;
         float numero1, numero2, resultado = 0;
-        String menu = "\n\n------------------\n\n[-1] => Salir\n[0] => Sumar\n[1] => Restar\n[2] => Multiplicar\n[3] => Dividir\nElige: ";
+        String menu = "\n\n------------------\n\n[-1] => Salir\n[0] => Sumar\n[1] => Restar\n[2] => Multiplicar\n[3] => Dividir\n[4] => Potencia\nElige: ";
         do {
             System.out.println(menu);
 
@@ -51,6 +51,9 @@ public class Cliente {
 	                case 3:
 	                    resultado = interfaz.dividir(numero1, numero2);
 	                    break;
+					case 4:
+						resultado = interfaz.potencia(numero1, numero2);
+						break;
 	            }
 
                 System.out.println("Resultado => " + String.valueOf(resultado));

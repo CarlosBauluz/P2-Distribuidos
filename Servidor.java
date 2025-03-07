@@ -31,6 +31,11 @@ public class Servidor {
             public float dividir(float numero1, float numero2) throws RemoteException {
                 return numero1 / numero2;
             };
+
+            @Override
+            public float potencia(float numero1, float numero2) throws RemoteException {
+                return (float) Math.pow(numero1, numero2);
+            };
         }, 0);
         Registry registry = LocateRegistry.createRegistry(PUERTO);
        	System.out.println("Servidor escuchando en el puerto " + String.valueOf(PUERTO));
