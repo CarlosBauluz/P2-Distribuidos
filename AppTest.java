@@ -37,4 +37,10 @@ public class AppTest {
         assertEquals(2, interfaz.dividir(6, 3), 0);
     }
 
+    @Test
+    public void testPotencia() throws RemoteException, Exception {
+        Registry registry = LocateRegistry.getRegistry("localhost", 1100);
+        Interfaz interfaz = (Interfaz) registry.lookup("Calculadora"); //Buscar en el registro...
+        assertEquals(8, interfaz.potencia(2, 3), 0);
+    }
 }
