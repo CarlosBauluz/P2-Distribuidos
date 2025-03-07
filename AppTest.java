@@ -16,4 +16,25 @@ public class AppTest {
         assertEquals(5, interfaz.sumar(2, 3), 0);
     }
 
+    @Test
+    public void testRestar() throws RemoteException, Exception {
+        Registry registry = LocateRegistry.getRegistry("localhost", 1100);
+        Interfaz interfaz = (Interfaz) registry.lookup("Calculadora"); //Buscar en el registro...
+        assertEquals(2, interfaz.restar(5, 3), 0);
+    }
+
+    @Test
+    public void testMultiplicar() throws RemoteException, Exception {
+        Registry registry = LocateRegistry.getRegistry("localhost", 1100);
+        Interfaz interfaz = (Interfaz) registry.lookup("Calculadora"); //Buscar en el registro...
+        assertEquals(6, interfaz.multiplicar(2, 3), 0);
+    }
+
+    @Test
+    public void testDividir() throws RemoteException, Exception {
+        Registry registry = LocateRegistry.getRegistry("localhost", 1100);
+        Interfaz interfaz = (Interfaz) registry.lookup("Calculadora"); //Buscar en el registro...
+        assertEquals(2, interfaz.dividir(6, 3), 0);
+    }
+
 }
